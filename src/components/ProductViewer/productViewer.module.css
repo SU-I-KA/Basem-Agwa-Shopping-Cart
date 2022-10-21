@@ -1,0 +1,48 @@
+.productViewerSection {
+   max-width: 729px;
+   flex: 0 0 58.9%;
+}
+
+.productViewerSection .row {
+   display: flex;
+   justify-content: center;
+   gap: 40px;
+}
+
+.columOne::-webkit-scrollbar {
+   width: 0px;
+   background: transparent;
+}
+
+.columOne .productRow {
+   width: 100%;
+   max-width: 79px;
+   max-height: 80px;
+   margin-bottom: 40px;
+   cursor: pointer;
+   overflow: hidden;
+}
+
+.productRow img {
+   display: block;
+   width: 100%;
+}
+
+.productViewerSection .columTwo {
+   flex: 5;
+   height: fit-content;
+}
+
+.columTwo .displayProduct {
+   background-color: white;
+   overflow: hidden;
+   align-items: center;
+   margin-bottom: inherit;
+   position: relative;
+   cursor: pointer;
+}
+
+.displayProduct div img {
+   display: block;
+   width: 100%;
+}

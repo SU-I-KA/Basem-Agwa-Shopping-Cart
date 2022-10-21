@@ -1,0 +1,103 @@
+.selectWrap {
+   height: 35px;
+   position: relative;
+   user-select: none;
+}
+.selectWrap span {
+   color: #1d1f22;
+   font-size: 18px;
+   font-weight: 500;
+}
+.selectWrap ul {
+   list-style: none;
+}
+.selectWrap .defaultOption {
+   position: relative;
+   cursor: pointer;
+   height: 35px;
+}
+.selectWrap .defaultOption li {
+   padding: 0px 16px 0px 4px;
+   min-width: 44px;
+   text-align: right;
+}
+.selectWrap .defaultOption::after {
+   position: absolute;
+   display: block;
+   content: '';
+   width: 4px;
+   height: 4px;
+   top: 63%;
+   right: 0px;
+   margin-top: -3px;
+   border-bottom: 1px solid #000000;
+   border-right: 1px solid #000000;
+   transform: rotate(45deg) translateY(-50%);
+   transition: all 0.4s ease-in-out;
+   transform-origin: 50% 0;
+}
+.selectWrap .selectUl {
+   position: absolute;
+   top: 45px;
+   left: -6px;
+   width: 114px;
+   background-color: #fff;
+   box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+   display: block;
+   visibility: hidden;
+   opacity: 0;
+   transition: all 0.4s ease-in-out;
+   transform: translateY(-15px);
+   z-index: 20;
+}
+.defaultOption .option {
+   height: 35px !important;
+}
+ul.selectUl label.option {
+   padding-left: 24px;
+   padding-top: 11px;
+}
+.selectWrap .selectUl li {
+   cursor: pointer;
+   width: 100%;
+   height: 100%;
+}
+.selectWrap .option {
+   height: 45px;
+   position: relative;
+   display: block;
+   overflow: hidden;
+}
+.selectWrap .option input {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 1;
+   width: 100%;
+   height: 45px;
+   display: block;
+   opacity: 0;
+   cursor: pointer;
+}
+div.active ul.selectUl {
+   opacity: 1;
+   visibility: visible;
+   pointer-events: all;
+   transform: translateY(0);
+}
+div.active ul.defaultOption::after {
+   transform: rotate(-135deg) translateY(-50%);
+}
+
+.selectWrap .defaultOption input {
+   height: 35px !important;
+}
+
+.selectWrap .defaultOption span {
+   top: 7px;
+   position: relative;
+}
+
+.selectUl li:hover {
+   background-color: #eeeeee;
+}
