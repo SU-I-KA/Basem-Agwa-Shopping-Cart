@@ -11,10 +11,10 @@ class ProductProvider extends Component {
    state = {
       currencies: [],
       categories: [],
-      selectedCurrency: {
+      selectedCurrency: getLocalStorage('selectedCurrency', {
          label: 'USD',
          symbol: '$',
-      },
+      }),
       selectedCategory: 'all',
       cart: getLocalStorage('cartItems', []),
       cartOpen: false,
@@ -28,12 +28,21 @@ class ProductProvider extends Component {
       if (prevState.cart !== this.state.cart) {
          localStorage.setItem('cartItems', JSON.stringify(this.state.cart))
       }
+      if (prevState.selectedCurrency !== this.state.selectedCurrency) {
+         localStorage.setItem(
+            'selectedCurrency',
+            JSON.stringify(this.state.selectedCurrency)
+         )
+      }
    }
 
-   toggleMiniCart = () => {
-      this.setState({
-         cartOpen: !this.state.cartOpen,
-      })
+   toggleMiniCart = (bool) => {
+      this.setState(
+         {
+            cartOpen: bool,
+         },
+         () => console.log('toggled', bool)
+      )
    }
 
    getInitialData = async () => {
@@ -103,33 +112,6 @@ class ProductProvider extends Component {
          },
          () => console.log(this.state.cart)
       )
-
-      // const { cart } = this.state
-
-      // if (cart?.find((item) => item.uniqueId === uniqueId) == null) {
-      //    this.setState(
-      //       {
-      //          cart: [
-      //             ...cart,
-      //             { ...product, uniqueId, selectedAttributes, quantity: 1 },
-      //          ],
-      //       },
-      //       () => console.log(this.state.cart)
-      //    )
-      // } else {
-      //    this.setState(
-      //       {
-      //          cart: cart?.map((item) => {
-      //             if (item.uniqueId === uniqueId) {
-      //                return { ...item, quantity: item.quantity + 1 }
-      //             } else {
-      //                return item
-      //             }
-      //          }),
-      //       },
-      //       () => console.log(this.state.cart)
-      //    )
-      // }
    }
 
    decreaseCartQuantity = (id) => {

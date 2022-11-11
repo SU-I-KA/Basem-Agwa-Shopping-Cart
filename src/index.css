@@ -13,25 +13,12 @@ body {
    font-size: 16px;
 }
 
-ul {
-   list-style: none;
-}
-
 a {
    text-decoration: none;
 }
 
 main {
    overflow: auto;
-}
-
-@media screen and (max-width: 1024px) {
-   main {
-      padding: 80px 35px !important;
-   }
-   header {
-      padding: 5px 35px !important;
-   }
 }
 
 main.scrollLock {

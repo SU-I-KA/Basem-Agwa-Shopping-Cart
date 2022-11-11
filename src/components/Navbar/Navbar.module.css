@@ -13,6 +13,10 @@ nav li {
    position: relative;
 }
 
+.navList {
+   list-style: none;
+}
+
 nav li a {
    font-weight: 400;
    font-size: 16px;
@@ -38,31 +42,4 @@ nav li.active ::before {
 .rghtSection {
    display: flex;
    gap: 22px;
-}
-
-.cartIcon {
-   background: transparent;
-   border: 0;
-   cursor: pointer;
-   position: relative;
-   padding-top: 5px;
-}
-
-.cartQuantity {
-   position: absolute;
-   width: 20px;
-   height: 20px;
-   border-radius: 50%;
-   background: #1d1f22;
-   padding: 2.86px;
-   top: 0;
-   right: -12px;
-   justify-content: center;
-   font-family: 'Roboto';
-   font-weight: 700;
-   font-size: 14px;
-   display: flex;
-   align-items: center;
-   text-transform: uppercase;
-   color: #ffffff;
 }

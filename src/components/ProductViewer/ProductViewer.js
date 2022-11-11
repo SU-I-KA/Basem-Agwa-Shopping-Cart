@@ -7,15 +7,6 @@ class ProductViewer extends Component {
       this.state = {
          imgIndx: 0,
       }
-      this.smGalleriesRef = React.createRef()
-      this.bgGalleryRef = React.createRef()
-   }
-
-   componentDidMount() {
-      const height = `${
-         this.bgGalleryRef?.current.getBoundingClientRect().height
-      }px`
-      this.smGalleriesRef.current.style.height = height
    }
 
    render() {
@@ -27,9 +18,9 @@ class ProductViewer extends Component {
                <div className={styles.row}>
                   <div
                      className={styles.columOne}
-                     ref={this.smGalleriesRef}
                      style={{
                         overflowY: 'auto',
+                        maxHeight: '511px',
                      }}
                   >
                      {gallery?.map?.((image, index) => {
@@ -54,11 +45,13 @@ class ProductViewer extends Component {
                         )
                      })}
                   </div>
-                  <div className={styles.columTwo} ref={this.bgGalleryRef}>
+                  <div className={styles.columTwo}>
                      <div className={styles.displayProduct}>
-                        <div>
-                           <img src={gallery?.[imgIndx]} alt='' />
-                        </div>
+                        <img
+                           src={gallery?.[imgIndx]}
+                           alt=''
+                           className={styles.mainImg}
+                        />
                      </div>
                   </div>
                </div>

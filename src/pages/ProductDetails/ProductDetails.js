@@ -12,6 +12,7 @@ import SingleProductLoading from '../../components/Loading/SingleProductLoading'
 import { SectionContainer } from '../../context/context'
 
 import { isAttributeActive } from '../../utils/isAttributeActive'
+import { formatCurrency } from '../../utils/formatCurrency'
 
 class ProductDetails extends Component {
    state = {
@@ -153,9 +154,11 @@ class ProductDetails extends Component {
 
                      <div className={styles.priceSection}>
                         <h5 className={styles.attributeTitle}>price:</h5>
-                        <h3
-                           className={styles.attributeValue}
-                        >{`${selectedCurrency?.symbol} ${product?.prices?.[priceIndex]?.amount}`}</h3>
+                        <h3 className={styles.attributeValue}>{`${
+                           selectedCurrency?.symbol
+                        } ${formatCurrency(
+                           product?.prices?.[priceIndex]?.amount
+                        )}`}</h3>
                      </div>
                      <button
                         className={styles.pdpAddToCart}

@@ -45,9 +45,11 @@ class Cart extends Component {
                            <div className={styles.productDetails}>
                               <h4>{brand}</h4>
                               <h6>{name}</h6>
-                              <h3
-                                 className={styles.price}
-                              >{`${selectedCurrency.symbol} ${prices[priceIndex].amount}`}</h3>
+                              <h3 className={styles.price}>{`${
+                                 selectedCurrency.symbol
+                              } ${formatCurrency(
+                                 prices[priceIndex].amount
+                              )}`}</h3>
                               {attributes.length > 0 && (
                                  <div className={styles.attributes}>
                                     {attributes?.map((attribute) => {

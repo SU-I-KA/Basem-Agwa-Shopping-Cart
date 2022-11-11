@@ -9,23 +9,16 @@ import CartOverlay from '../CartOverlay/CartOverlay'
 import styles from './Navbar.module.css'
 
 import logo from '../../assets/logo.svg'
-import cart from '../../assets/cart.svg'
 
 class Navbar extends Component {
    render() {
-      const {
-         categories,
-         selectedCategory,
-         changeCategory,
-         cartQuantity,
-         toggleMiniCart,
-         cartOpen,
-      } = this.props.context
+      const { categories, selectedCategory, changeCategory } =
+         this.props.context
       return (
          <>
             <header>
                <nav>
-                  <ul>
+                  <ul className={styles.navList}>
                      {categories?.map((category) => {
                         return (
                            <li
@@ -57,17 +50,9 @@ class Navbar extends Component {
                </Link>
                <div className={styles.rghtSection}>
                   <DropDownMenu />
-                  <button className={styles.cartIcon} onClick={toggleMiniCart}>
-                     <img src={cart} alt='cart-icon' />
-                     {cartQuantity > 0 && (
-                        <div className={styles.cartQuantity}>
-                           {cartQuantity}
-                        </div>
-                     )}
-                  </button>
+                  <CartOverlay />
                </div>
             </header>
-            {cartOpen && <CartOverlay />}
          </>
       )
    }

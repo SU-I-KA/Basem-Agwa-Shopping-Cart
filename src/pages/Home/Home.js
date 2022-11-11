@@ -8,6 +8,8 @@ import { getProductsByCategory } from '../../Graphql/queries'
 
 import { SectionContainer } from '../../context/context'
 
+import { formatCurrency } from '../../utils/formatCurrency'
+
 import cartIcon from '../../assets/whiteCart.svg'
 import ProductsLoading from '../../components/Loading/ProductsLoading'
 
@@ -88,7 +90,9 @@ class Home extends Component {
                               to={`/product/${id}`}
                               className={styles.productTitle}
                            >{`${brand} ${name}`}</Link>
-                           <h5>{`${selectedCurrency.symbol} ${prices[priceIndex].amount}`}</h5>
+                           <h5>{`${selectedCurrency.symbol} ${formatCurrency(
+                              prices[priceIndex].amount
+                           )}`}</h5>
                         </article>
                      )
                   })

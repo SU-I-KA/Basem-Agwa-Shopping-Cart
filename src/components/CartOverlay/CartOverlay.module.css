@@ -227,10 +227,8 @@
    justify-content: center;
    align-items: center;
    padding: 16px 30px;
-
    width: 140px;
    height: 43px;
-
    background: #ffffff;
    border: 1px solid #1d1f22;
    font-family: 'Raleway';
@@ -261,4 +259,33 @@
    align-items: center;
    overflow: hidden;
    z-index: 15;
+}
+
+/* new */
+
+.cartIcon {
+   background: transparent;
+   border: 0;
+   cursor: pointer;
+   position: relative;
+   padding-top: 8px;
+}
+
+.cartQuantity {
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background: #1d1f22;
+   padding: 2.86px;
+   top: 0;
+   right: -12px;
+   justify-content: center;
+   font-family: 'Roboto';
+   font-weight: 700;
+   font-size: 14px;
+   display: flex;
+   align-items: center;
+   text-transform: uppercase;
+   color: #ffffff;
 }

@@ -41,9 +41,12 @@ class DropDownMenu extends Component {
          !this.wrapperRef.current.contains(event.target) &&
          this.state.open
       ) {
-         this.setState({
-            open: false,
-         })
+         this.setState(
+            {
+               open: false,
+            },
+            () => console.log('clicked outside')
+         )
       }
    }
 
