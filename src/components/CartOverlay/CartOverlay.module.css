@@ -6,6 +6,7 @@
    position: absolute;
    width: 345px;
    height: 80vh;
+   max-height: 677px;
    right: 72px;
    top: 78px;
    background: #ffffff;
@@ -26,7 +27,7 @@
 }
 
 .cartItems {
-   height: 67%;
+   height: 70%;
    width: 100%;
    display: grid;
    overflow-y: auto;
